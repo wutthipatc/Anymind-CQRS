@@ -14,7 +14,7 @@
 ### Running the application
 * Clone this repository to your local machine
 * Open the application using IntelliJ Idea 
-* Run the `sbt` command from terminal inside the project to start `sbt shell` and run command `run` or click on play button Main object to start the application 
+* **Run the `sbt` command from terminal inside the project to start `sbt shell` or you can use `sbt shell view` on Menu bar from IntelliJ and run command** `run` or **click on play button Main object to start the application** 
 * Press ctrl+c to stop sbt shell or press stop button from the IDE
 
 ### Enjoy calling APIs via Postman and see the result
@@ -26,4 +26,4 @@
 
 ### Note
 * The Kafka consumer part just consumes the message to *simulate the read side of CQRS* but the actual Persistence actor is only on the write side which we use there record on both write and read sides (Actually we can just create the same Persistence actor receiving command from Kafka consumer event transformed)
-* The wallet is initiated from the time you first run the application with 1000 BTC. This means you need to add the amount specifying the time after the time of first run and always adding the amount after the `dateTime` of latest one
+* **The wallet is initiated from the time you first run the application with 1000 BTC. This means you need to add the amount specifying the time after the time of first run** and always adding the amount after the `dateTime` of latest one
