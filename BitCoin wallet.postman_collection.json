@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "9f37cedf-7675-4b92-aad5-c9f8ad744b18",
+		"name": "BitCoin wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add bitcoin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 9.4,\n    \"dateTime\": \"2023-04-18T16:39:57+07:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/wallet/add-bitcoin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"add-bitcoin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read bitcoin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"startDateTime\": \"2023-04-17T00:45:05+07:00\",\n    \"endDateTime\": \"2023-04-18T14:00:00+07:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/wallet/hour-balance",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"hour-balance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
