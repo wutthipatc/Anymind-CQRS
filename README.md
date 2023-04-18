@@ -28,4 +28,5 @@
 ### Note
 * The Kafka consumer part just consumes the message to *simulate the read side of CQRS* but the actual Persistence actor is only on the write side which we use their records on both write and read sides (Actually we can just create the same Persistence actor receiving command from Kafka consumer event transformed)
 * **The wallet is initiated from the first time you call add API with initial amount 1000 BTC. After that you need to add the amount specifying the time after the time of the previous call as mentioned above and so on, otherwise the validation error response will be shown**
+* In order to reset all state, all database tables trancation is needed to make sure all records are removed and the Kafka topic must be reseted by using this cammand `bin/kafka-topics.sh   --delete --topic bitcoin-topic --bootstrap-server localhost:9092`
 * If there is any problem or issue please reasch out to me. Thanks.
