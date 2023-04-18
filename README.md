@@ -26,6 +26,6 @@
 * Try to stop the application by ctrl+c from sbt shell or from stop button on IntelliJ and restart to see if it continuously playing from the last state
 
 ### Note
-* The Kafka consumer part just consumes the message to *simulate the read side of CQRS* but the actual Persistence actor is only on the write side which we use there record on both write and read sides (Actually we can just create the same Persistence actor receiving command from Kafka consumer event transformed)
-* **The wallet is initiated from the time you first run the application with 1000 BTC. This means you need to add the amount specifying the time after the time of first run** and always adding the amount after the `dateTime` of latest one
+* The Kafka consumer part just consumes the message to *simulate the read side of CQRS* but the actual Persistence actor is only on the write side which we use their records on both write and read sides (Actually we can just create the same Persistence actor receiving command from Kafka consumer event transformed)
+* **The wallet is initiated from the first time you call add API with initial amount 1000 BTC. After that you need to add the amount specifying the time after the time of the previous call as mentioned above and so on, otherwise the validation error response will be shown**
 * If there is any problem or issue please reasch out to me. Thanks.
