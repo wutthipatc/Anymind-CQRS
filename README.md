@@ -15,7 +15,7 @@
 * Clone this repository to your local machine
 * Open the application using IntelliJ Idea 
 * **Run the `sbt` command from terminal inside the project to start `sbt shell` or you can use `sbt shell view` on Menu bar from IntelliJ and run command** `run` or **click on play button Main object to start the application** 
-* The Http server is run on `localhost:8080`. YOu can use Postman collection to by pass this setting. 
+* The Http server is run on `localhost:8080`. You can use Postman collection to by pass this setting. 
 * Press ctrl+c to stop sbt shell or press stop button from the IDE
 
 ### Enjoy calling APIs via Postman and see the result
