@@ -3,8 +3,8 @@
 ### Preparation
 * Install Docker runtime and Docker-compose on your machine
 * Go to project directory
-* Run `docker-compose -f kafka-docker-compose.yml` up to start Kafka and Zookeeper Bootstrap server at localhost:9092
-* Run `docker-compose -f mysql-docker-compose.yml` up to start MySQL database at localhost:3306
+* Run `docker-compose -f kafka-docker-compose.yml up` to start Kafka and Zookeeper Bootstrap server at `localhost:9092`. Press ctrl+c to terminate.
+* Run `docker-compose -f mysql-docker-compose.yml up` to start MySQL database at `localhost:3306`. Press ctrl+c to terminate.
 * Install MySQL workbench or other MySQL client to access the database then create all necessary table from `mysql-schema.sql` file on the database name `db`
 * Download `kafka-3.4.0-src` attached on `https://app.greenhouse.io/tests/abd90e0e4153c51e9055690d8323096e?utm_medium=email&utm_source=TakeHomeTest` to run the consumer to be able to see the message consume from the specific topic `bitcoin-topic`
 * Go to `kafka-3.4.0-src` and run command `bin/kafka-console-consumer.sh --topic bitcoin-topic  --from-beginning --bootstrap-server localhost:9092` to start consuming the message published from the application
@@ -15,6 +15,7 @@
 * Clone this repository to your local machine
 * Open the application using IntelliJ Idea 
 * **Run the `sbt` command from terminal inside the project to start `sbt shell` or you can use `sbt shell view` on Menu bar from IntelliJ and run command** `run` or **click on play button Main object to start the application** 
+* The Http server is run on `localhost:8080`. YOu can use Postman collection to by pass this setting. 
 * Press ctrl+c to stop sbt shell or press stop button from the IDE
 
 ### Enjoy calling APIs via Postman and see the result
