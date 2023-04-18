@@ -2,7 +2,7 @@ package read.model
 
 import akka.actor.InvalidMessageException
 import akka.actor.typed.ActorRef
-import kafka.message.{AddAmountToWalletMsg, CreateWalletMsg, KafkaMsg}
+import write.kafka.message.{AddAmountToWalletMsg, CreateWalletMsg, KafkaMsg}
 
 import java.time.Instant
 

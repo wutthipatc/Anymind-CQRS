@@ -1,4 +1,4 @@
-package kafka.message
+package write.kafka.message
 
 import `type`.{ObjectToString, StringToObject}
 import akka.actor.typed.ActorRef

@@ -9,19 +9,16 @@ import org.slf4j.LoggerFactory
 import write.actor.WalletState
 import write.dto.request.AddBitCoinRequest
 import write.dto.response.WriteApiResponse
-import write.model.{AskState, Command, CreateWallet, WalletSnapshot}
+import write.model.{AskState, Command}
 
 import java.time.Instant
+import scala.concurrent.Future
 import scala.concurrent.duration.DurationInt
-import scala.concurrent.{Await, Future}
 
 class AddBitCoinService(actorRef: ActorRef[Command])(implicit system: ActorSystem[_]) {
   private val logger = LoggerFactory.getLogger(classOf[AddBitCoinService])
-  private val initBalance = BigDecimal(1000)
   implicit val askTimeout: Timeout = Timeout(5.seconds)
   implicit val scheduler: Scheduler = system.scheduler
-  // initiate wallet with 1000 balance, will be ignored if already created
-  Await.result(actorRef ? CreateWallet.curried(WalletSnapshot(initBalance, Instant.now)), 3000.seconds)
   import system.executionContext
   def addBitCoin(request: AddBitCoinRequest): Future[BaseResponse[WriteApiResponse]] = {
     logger.info(s"AddBitCoinService::addBitCoin with request: $request")

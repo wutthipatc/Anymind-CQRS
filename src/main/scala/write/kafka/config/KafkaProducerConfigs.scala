@@ -1,4 +1,4 @@
-package kafka.config
+package write.kafka.config
 
 import akka.actor.ActorSystem
 import akka.kafka.ProducerSettings

@@ -1,10 +1,8 @@
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.Route
 import com.typesafe.config.ConfigFactory
 import common.route.AllRoute
-import kafka.config.KafkaProducerConfigs
 import read.actor.{HourBalanceSeqController, KafkaConsumerOffsetController}
 import read.kafka.config.KafkaConsumerConfigs
 import read.kafka.consumer.KafkaConsumer
@@ -12,7 +10,7 @@ import read.projection.HourBalanceProjection
 import read.route.ReadRoute
 import read.service.GetHourBalanceService
 import write.actor.BitcoinWallet
-import write.dto.response.WriteApiResponse
+import write.kafka.config.KafkaProducerConfigs
 import write.route.WriteRoute
 import write.service.AddBitCoinService
 

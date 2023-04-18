@@ -6,10 +6,10 @@ import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.{ActorRef, ActorSystem, Behavior, Scheduler}
 import akka.util.Timeout
 import database.DatabaseUtils
-import kafka.config.KafkaProducerConfigs
-import kafka.message._
-import kafka.producer.KafkaProducer
 import org.slf4j.LoggerFactory
+import write.kafka.config.KafkaProducerConfigs
+import write.kafka.message.{AddAmountToWalletMsg, AskSequence, CreateWalletMsg, Done, KafkaCommandMsg, KafkaMsg, SendKafkaFailed, SendKafkaSuccess, Sequence}
+import write.kafka.producer.KafkaProducer
 
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt

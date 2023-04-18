@@ -62,7 +62,7 @@ object KafkaConsumerOffsetController {
         else if (msgOffset.value > offset.value) {
           ctx.log.error(s"KafkaConsumerOffsetController invalid message order (message could be lost) received message OffsetControlMsg: $msg, stateOffset: $offset")
           replyTo ! ConsumerAckMsg
-          receiveMessage(msgOffset)
+          receiveMessage(msgOffset.copy(msgOffset.value + 1))
         }
         else {
           ctx.log.info(s"KafkaConsumerOffsetController receive already processed message OffsetControlMsg: $msg, stateOffset: $offset")

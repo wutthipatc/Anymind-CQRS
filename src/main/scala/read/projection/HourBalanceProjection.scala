@@ -1,16 +1,16 @@
 package read.projection
 
-import akka.{Done, NotUsed}
+import akka.NotUsed
 import akka.actor.CoordinatedShutdown
 import akka.actor.typed.{ActorRef, ActorSystem}
 import akka.persistence.jdbc.query.scaladsl.JdbcReadJournal
 import akka.persistence.query.{EventEnvelope, PersistenceQuery}
-import akka.stream.{KillSwitches, UniqueKillSwitch}
 import akka.stream.scaladsl.{Keep, Source}
 import akka.stream.typed.scaladsl.ActorSink
+import akka.stream.{KillSwitches, UniqueKillSwitch}
 import database.DatabaseUtils
 import org.slf4j.LoggerFactory
-import read.model.{AckMsg, CompleteMsg, FailureMsg, HourBalanceSeqControlMsg, InitMsg, SeqControlMsg}
+import read.model._
 import write.model.{AddAmountToWalletEvent, CreateWalletEvent, WalletEvent}
 
 import java.sql.Timestamp

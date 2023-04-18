@@ -8,10 +8,10 @@ import akka.kafka.scaladsl.Consumer
 import akka.stream.scaladsl.{Keep, Source}
 import akka.stream.typed.scaladsl.ActorSink
 import akka.stream.{KillSwitches, UniqueKillSwitch}
-import kafka.message.KafkaMsg
 import org.slf4j.LoggerFactory
 import read.kafka.config.KafkaConsumerConfigs
 import read.model._
+import write.kafka.message.KafkaMsg
 
 import scala.concurrent.Future
 

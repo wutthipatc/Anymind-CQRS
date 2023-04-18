@@ -1,4 +1,4 @@
-package kafka.producer
+package write.kafka.producer
 
 import `type`.ObjectToString
 import akka.actor.CoordinatedShutdown
@@ -7,10 +7,10 @@ import akka.kafka.scaladsl.Producer
 import akka.stream.scaladsl.{Keep, Source}
 import akka.stream.typed.scaladsl.ActorSource
 import akka.stream.{CompletionStrategy, KillSwitches, UniqueKillSwitch}
-import kafka.config.KafkaProducerConfigs
-import kafka.message._
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.slf4j.LoggerFactory
+import write.kafka.config.KafkaProducerConfigs
+import write.kafka.message.{AckMessage, Done, KafkaCommandMsg, KafkaMsg, SendKafkaSuccess}
 
 import scala.concurrent.Future
 
