@@ -19,7 +19,7 @@
 * Press ctrl+c to stop sbt shell or press stop button from the IDE
 
 ### Enjoy calling APIs via Postman and see the result
-* if there is an issue you can see the log output and response error message that should be related to request validtion error 
+* If there is an issue you can see the log output and response error message that should be related to request validtion error 
 * The add bit coin API must be called subsequently with `dateTime` field greater than or equal the last add call
 * Please be aware that the request could be sent the `dateTime` field with variety of time zone and MySQL only store the UTC time
 * Playing around with calling and see the Kafka consumer client and MySQL records
@@ -28,5 +28,5 @@
 ### Note
 * The Kafka consumer part just consumes the message to *simulate the read side of CQRS* but the actual Persistence actor is only on the write side which we use their records on both write and read sides (Actually we can just create the same Persistence actor receiving command from Kafka consumer event transformed simulated by log out)
 * **The wallet is initiated from the first time you call add API with initial amount 1000 BTC. After that you need to add the amount specifying the time after the time of the previous call as mentioned above and so on, otherwise the validation error response will be shown**
-* In order to reset all states, all database tables truncation is needed to make sure all records are removed. The directory `/data` which is the volume mapper for Zookeeper and Kafka on the project root path must be deleted. After that, you need to run the application to create the topic on Kafka. Then, the CLI Kafka consumer on terminal can be launched to see the message published. You can see the application log to witness that the message is consumed by the consumer stream from message prefix `KafkaConsumerOffsetController call persistent actor with command: $command` (This message simulates the call to the persistence actor from the read side as mentioned above) as well.
+* In order to reset all states, all database tables truncation is needed to make sure all records are removed. The directory `/data` which is the volume mapper for Zookeeper and Kafka on the project root path must be deleted. After that, you need to run the application to create the topic on Kafka. Then, the CLI Kafka consumer on terminal can be launched to see the message published. You can see the application log to witness that the message is consumed by the consumer stream from message prefix `KafkaConsumerOffsetController call persistent actor with command: $command` (This message simulates the call to the Persistence actor from the read side as mentioned above) as well.
 * If there is any problem or issue please reach out to me. Thanks.
